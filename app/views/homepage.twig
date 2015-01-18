@@ -1,22 +1,26 @@
 {% include 'header.twig' %}
 
 <header class="clearfix">
-    {#<a href="http://foundedinholland.com" class="no-link"><img src="images/logo.png" alt="Logo"></a>#}
-    <h1>Founded in Holland - The most innovative startups in the Netherlands</h1>
-    <span>The Netherlands &mdash; Holland &mdash; has a <a href="http://www.usnews.com/opinion/economic-intelligence/2014/02/14/how-the-netherlands-built-a-thriving-startup-scene" target="_blank">thriving&nbsp;startup&nbsp;scene</a>. The surge of successful entrepreneurial endeavors has made the region one of <a href="http://www.wired.co.uk/magazine/archive/2014/09/european-startups/amsterdam/viewall" target="_blank">Europe's&nbsp;hottest&nbsp;startup&nbsp;hubs</a>. As part of <a href="http://foundedx.com" target="_blank">Founded&nbsp;X</a>, this list is a tribute to innovative startups that are proud of their <a href="https://www.youtube.com/watch?v=rzOzUHYwPms" target="_blank">Dutch&nbsp;roots</a>. <a href="about">Learn&nbsp;more</a> about the initiative.</span>
-    <span class="apply">Want to join this list? <a href="#join">Submit&nbsp;your&nbsp;Dutch&nbsp;startup.</a></span>
+
+    <a href="http://foundedin.mk" class="no-link logo-link">
+        <img src="/static/assets/foundedinmk-logo.png" alt="Founded in Macedonia Logo">
+    </a>
+    <h1>Founded in Macedonia - The most innovative startups in Macedonia</h1>
+
+    <span>Macedonians are no strangers to tough times &mdash; It is a part of our everyday lives. However, Macedonia has a growing startup scene and talented population excited about tech. Driven by our Macedonian spirit and passion to build something new, we are just getting started :) As a member of the global <a href="http://foundedx.com" target="_blank">Founded&nbsp;X</a> community, this list is a tribute to innovative startups that are proud of their <a href="https://www.youtube.com/watch?v=EbRzILbLRNM" target="_blank">Macedonian&nbsp;roots</a>. <a href="http://foundedx.com/about">Learn&nbsp;more</a> about the initiative.</span>
+    <span class="apply">Want to join this list? <a href="#join">Submit&nbsp;your&nbsp;Macedonian&nbsp;startup.</a></span>
 
 </header>
 
 {% if featured|length > 0 %}
 
-<br>
-<div class="featured-line">
-    <div class="featured-title" style="width:180px;">
-        <i class="fa fa-star-o"></i>&nbsp;&nbsp;&nbsp;Featured&nbsp;Startups
+    <br>
+    <div class="featured-line">
+        <div class="featured-title" style="width:180px;">
+            <i class="fa fa-star-o"></i>&nbsp;&nbsp;&nbsp;Featured&nbsp;Startups
+        </div>
     </div>
-</div>
-<br>
+    <br>
 
     <ul class="cbp-rfgrid cbp-rfgrid2 clearfix">
 
@@ -50,51 +54,92 @@
 <div class="join-box">
     <a name="join" class="no-link"></a>
                 <span><strong>What do all these companies have in common?</strong><br>
-                1) They were founded in Holland in the 21st century<br>
-                2) They have the ambition to transform their industry<br>
-                3) The founders have never clubbed a baby seal<br><br><br>
+                1) They were founded in Macedonia in the 21st century<br>
+                2) They have the passion to build great things<br>
+                3) The founders are building stuff while eating shopska and drinking rakija<br><br><br>
                 Does your startup meet these criteria and do you want to support this initiative?<br>
-                <strong>Submit your Dutch startup by filling out the <a class="typeform-share link" href="https://weekly.typeform.com/to/HHO2Uc" data-mode="2" target="_blank">application&nbsp;form</a>.</strong>
+                <strong>Submit your Macedonian startup by filling out the <a class="typeform-share link btn-join-form" href="#" data-mode="2" target="_blank">application&nbsp;form</a>.</strong>
                 <br><br><br>
-                <a class="typeform-share link join-button" href="#" data-mode="2" id="btn-join-form" target="_blank">Join&nbsp;the&nbsp;list</a></span>
+                <a class="typeform-share link join-button btn-join-form" href="#" data-mode="2">Join&nbsp;the&nbsp;list</a></span>
 
-                <div id="join-form" style="display: none">
+    <div id="join-form" style="display: none">
 
-                    <form action="{{ route('public.create') }}" method="post">
-                    Name: <input type="text" id="name" name="name"><br />
-                    Year founded: <input type="text" id="founded" name="founded"><br />
-                    Website: <input type="text" id="url" name="url" /><br />
-                    Twitter: @<input type="text" id="twitter" name="twitter" /><br />
-                    URL to high-res logo: <input type="text" id="logo_url" name="logo_url" /><br />
-                    Contact name: <input type="text" id="contact_name" name="contact_name" /> (optional) <br />
-                    Contact email: <input type="email" id="contact_email" name="contact_email" /> (optional) <br />
+        <form action="{{ route('public.create') }}" method="post">
 
-                    <br />
+            <div class="form-label">
+                <label for="name">Name:</label>
+            </div>
+            <div class="form-input">
+                <input type="text" id="name" name="name">
+            </div>
 
-                    <input type="submit" name="add" value="Add it!" class="btn-submit-startup" />
+            <div class="form-label">
+                <label for="year_founded">Year founded:</label>
+            </div>
+            <div class="form-input">
+                <input type="text" id="year_founded" name="year_founded">
+            </div>
 
-                    </form>
+            <div class="form-label">
+                <label for="url">Website:</label>
+            </div>
+            <div class="form-input">
+                <input type="text" id="url" name="url" />
+            </div>
 
-                </div>
+            <div class="form-label">
+                <label for="twitter">Twitter: @</label>
+            </div>
+            <div class="form-input">
+                <input type="text" id="twitter" name="twitter" />
+            </div>
 
-                <p id="join-msg"></p>
+            <div class="form-label">
+                <label for="logo_url">URL to high-res logo: </label>
+            </div>
+            <div class="form-input">
+                <input type="text" id="logo_url" name="logo_url" />
+                <i class="fa fa-info-circle fa-lg" title="Size: 600x600, Transparent background and white color" data-toggle="tooltip" data-placement="top"></i>
+            </div>
+
+            <div class="form-label">
+                <label for="contact_name">Contact name:</label>
+            </div>
+            <div class="form-input">
+                <input type="text" id="contact_name" name="contact_name" /> (optional)
+            </div>
+
+            <div class="form-label">
+                <label for="contact_email">Contact email:</label>
+            </div>
+            <div class="form-input">
+                <input type="email" id="contact_email" name="contact_email" /> (optional)
+            </div>
+
+            <input type="submit" name="add" value="Add it!" class="btn-submit-startup" />
+
+        </form>
+
+    </div>
+
+    <p id="join-msg"></p>
 
     <br><br>
 
     {#<a name="update" class="no-link"></a>#}
     {#<span><strong>Just interested? Subscribe to receive updates directly into your mailbox.</strong></span>#}
     {#<form style="text-align:center;" action="https://tinyletter.com/foundedinholland" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/foundedinholland', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">#}
-        {#<input type="text" name="email" id="tlemail" value="Email address" onfocus="if (this.value=='Email address'){this.value='';};return false;" onblur="if (this.value==''){this.value='Email address';return false;}" /> <input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe" class="submit" />#}
+    {#<input type="text" name="email" id="tlemail" value="Email address" onfocus="if (this.value=='Email address'){this.value='';};return false;" onblur="if (this.value==''){this.value='Email address';return false;}" /> <input type="hidden" value="1" name="embed"/><input type="submit" value="Subscribe" class="submit" />#}
     {#</form>#}
 
     {#<br><br><br>#}
 
-    <span>Follow on <a href="https://www.facebook.com/foundedinholland" target="_blank"><i class="fa fa-facebook-square"></i>&nbsp;Facebook</a> &amp; <a href="https://twitter.com/foundedholland" target="_blank"><i class="fa fa-twitter-square"></i>&nbsp;Twitter</a> &nbsp;&middot;&nbsp; <a href="about">About&nbsp;the&nbsp;initiative</a> &nbsp;&middot;&nbsp; <a href="https://drive.google.com/folderview?id=0B7rp4qZAI1DoN3haMk0zTHA4aTg&usp=sharing" target="_blank">Press&nbsp;kit</a> &nbsp;&middot;&nbsp; <a href="faq">FAQ</a> &nbsp;&middot;&nbsp; <a href="advertise">Advertise</a> &nbsp;&middot;&nbsp; <a href="http://foundedinholland.spreadshirt.nl/" target="_blank">Shop</a> &nbsp;&middot;&nbsp; <a href="mailto:join@foundedinholland.com" target="_blank">Contact</a></span>
+    <span>Follow on <a href="https://www.facebook.com/foundedinmk" target="_blank"><i class="fa fa-facebook-square"></i>&nbsp;Facebook</a> &amp; <a href="https://twitter.com/foundedinmk" target="_blank"><i class="fa fa-twitter-square"></i>&nbsp;Twitter</a> &nbsp;&middot;&nbsp; <a href="mailto:join@foundedin.mk" target="_blank">Contact</a></span>
 
-    <div align="center" style="width:170px; margin:0 auto;">
-        <div class="fb-like" data-href="http://foundedinholland.com/" data-layout="button" data-action="like" data-show-faces="false" data-share="true" style="margin-bottom:-20px; padding:5px;"></div>
-        <div style="padding:5px;"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://foundedinholland.com/" data-via="foundedholland" data-count="none" data-dnt="true">Tweet</a></div>
-    </div>
+    {#<div align="center" style="width:170px; margin:0 auto;">#}
+    {#<div class="fb-like" data-href="http://foundedin.mk/" data-layout="button" data-action="like" data-show-faces="false" data-share="true" style="margin-bottom:-20px; padding:5px;"></div>#}
+    {#<div style="padding:5px;"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://foundedin.mk/" data-via="foundedholland" data-count="none" data-dnt="true">Tweet</a></div>#}
+    {#</div>#}
 
 </div>
 

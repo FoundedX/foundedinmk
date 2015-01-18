@@ -71,7 +71,13 @@ class StartupsController extends BaseController
             "message" => "The startup was successfully approved."
         ];
 
-        /** @todo Send an email to the submitter */
+        if ($startup->contact_email != "") {
+            Mail::send('emails.startup-approved', ["startup" => $startup],
+                function($message) use ($startup) {
+                    $message->to($startup->contact_email)->subject('Startup application approved');
+                }
+            );
+        }
 
         return Response::json($data);
     }
@@ -96,7 +102,13 @@ class StartupsController extends BaseController
             "message" => "The startup was successfully declined."
         ];
 
-        /** @todo Send an email to the submitter */
+        if ($startup->contact_email != "") {
+            Mail::send('emails.startup-declined', ["startup" => $startup],
+                function($message) use ($startup) {
+                    $message->to($startup->contact_email)->subject('Startup application declined');
+                }
+            );
+        }
 
         return Response::json($data);
     }

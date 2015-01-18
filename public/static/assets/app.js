@@ -8,7 +8,7 @@ $(function(){
         if (confirmed) {
 
             $.ajax({
-                type: 'delete',
+                type: 'get',
                 url: btn.attr('href'),
                 dataType: "json",
                 success:function(data){
@@ -97,10 +97,10 @@ $(function(){
     });
 
     $(document).on('click', '.btn-decline-startup', function() {
-        var reason = prompt("Why are you declining the startup? The message will be sent to the submitter.", "");
+        var confirmed = confirm('Are you sure? The submitter will be notified that the startup is declined.');
         var btn = $(this);
 
-        if (reason != null) {
+        if (confirmed) {
             $.ajax({
                 type: 'get',
                 url: btn.attr('href'),

@@ -69,7 +69,7 @@ return [
     | in order to be marked as safe.
     |
     */
-    'facades' => ['Session'],
+    'facades' => ['Session', 'Config'],
 
     /*
     |--------------------------------------------------------------------------

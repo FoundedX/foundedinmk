@@ -46,7 +46,7 @@
     -webkit-border-radius: 0.250em;
     -moz-border-radius: 0.250em;
     border-radius: 0.250em;
-    background: rgba(214,74,28,0.7);
+    background: rgba(191, 28, 34, 0.7);
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -156,11 +156,11 @@
 }
 
 .cbp-spmenu a:hover {
-    background: #ef5624;
+    background: #bf1c22;
 }
 
 .cbp-spmenu a:active {
-    background: #ef5624;
+    background: #bf1c22;
     color: #fff;
 }
 
